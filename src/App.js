@@ -19,7 +19,7 @@ export default class App extends React.Component {
         <div className="App">
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <p onClick={this.pTest}>
+            {/*<p onClick={this.pTest}>
               Edit <code>src/App.js</code> and save to reload.
             </p>
             <a
@@ -30,7 +30,7 @@ export default class App extends React.Component {
                 onClick={this.showCock}
             >
               Learn React
-            </a>
+            </a>*/}
           </header>
         </div>
     );
