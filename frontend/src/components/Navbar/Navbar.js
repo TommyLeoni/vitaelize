@@ -4,7 +4,7 @@ import logo from "../../images/logo.svg";
 
 function Navbar() {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light">
             <a className="navbar-brand font-weight-bold m-brand" id="brand-text" href="#">
                 <img src={logo} className="Navbar-logo" alt="logo" />
                 vitaelize
