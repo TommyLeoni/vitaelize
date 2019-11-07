@@ -1,9 +1,9 @@
 #hometitle{
-    font-size: 70px;
+    font-size: 4.5rem;
 }
 
 .m-title{
-    margin: 5rem 0;
+    margin: 4% 0;
 }
 
 .Home-logo{
@@ -15,10 +15,17 @@
 .Home-cv{
     height: 20rem;
     width: 20rem;
-    margin-right: 30px;
 }
 
 #div-hcv{
-    margin-left: 20%;
-    margin-right: 55px;
+}
+
+#div-htext{
+    height: 20rem;
+}
+
+@media only screen and (max-device-width: 414px){
+    #hometitle{
+        font-size: 3.8rem;
+    }
 }
