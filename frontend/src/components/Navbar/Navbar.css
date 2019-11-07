@@ -1,0 +1,26 @@
+.Navbar-logo{
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+}
+
+#brand-text{
+    color: #777777;
+}
+
+.nav-item{
+    padding: 0 20px;
+}
+.m-brand{
+    margin: .25rem .25rem .25rem 5rem !important;
+}
+.ml-nav{
+    margin-right: 7rem;
+}
+.active{
+    background-color: #e0e0e0;
+}
+
+.font-nav{
+    font-weight: 500;
+}

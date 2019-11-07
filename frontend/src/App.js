@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './images/logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from "./components/Navbar/Navbar";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -17,6 +19,7 @@ export default class App extends React.Component {
   render() {
     return(
         <div className="App">
+          <Navbar/>
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             {/*<p onClick={this.pTest}>
