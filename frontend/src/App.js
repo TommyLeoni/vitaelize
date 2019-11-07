@@ -19,7 +19,7 @@ export default class App extends React.Component {
   render() {
     return(
         <div className="App">
-          <Navbar/>
+            <Navbar/>
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             {/*<p onClick={this.pTest}>
