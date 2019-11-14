@@ -1,7 +1,7 @@
 
 .select-cv{
-    height: 9rem;
-    width: 9rem;
+    height: 12rem;
+    width: 12rem;
 }
 
 .btn-purple{
@@ -23,7 +23,7 @@
 .btn-outline-green{
   border: 0.05rem solid #000000;
 }
-.btn-cirlce{
+.btn-circle{
   height: 4rem;
   width: 4rem;
   margin: 0.5rem;
