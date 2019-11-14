@@ -18,8 +18,11 @@ function Navbar() {
 
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav ml-auto ml-nav font-nav">
+                    <li className="nav-item">
+                        <Link className="nav-link" to="">Home</Link>
+                    </li>
                     <li className="nav-item active">
-                        <Link className="nav-link" to="#">Templates</Link>
+                        <Link className="nav-link" to="Templates">Templates</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="#">Log in</Link>

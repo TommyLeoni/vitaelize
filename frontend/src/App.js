@@ -5,7 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Homepage/Home";
-import Template from "./components/Templates/Template"
+import { Switch, Route } from "react-router-dom";
+import Templates from "./components/Templates/Template";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -26,7 +27,16 @@ export default class App extends React.Component {
               <Navbar/>
             </header>
             <body>
-                <Home/>
+                <Switch>
+                    <Route
+                        exact
+                        path={"/"}
+                        render={props => (
+                            <Home {...props}/>
+                        )}
+                    />
+                    <Route path="/templates" component={Templates}/>
+                </Switch>
             </body>
         </div>
     );
