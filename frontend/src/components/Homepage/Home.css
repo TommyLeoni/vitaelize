@@ -29,6 +29,17 @@
 #introduction-text{
     font-size: 1.2rem;
 }
+
+.navbar .nav-vit .active {
+    background-color: #e0e0e0;
+}
+
+
+
+
+
+
+
 /*max phone width*/
 @media only screen and (max-device-width: 414px){
     #m-title{

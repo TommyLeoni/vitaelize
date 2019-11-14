@@ -35,7 +35,7 @@ export default class App extends React.Component {
                             <Home {...props}/>
                         )}
                     />
-                    <Route path="/templates" component={Templates}/>
+                    <Route exact path="/templates" component={Templates}/>
                 </Switch>
             </body>
         </div>

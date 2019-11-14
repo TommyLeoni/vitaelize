@@ -1,9 +1,16 @@
 import './Navbar.css';
 import React from 'react';
 import logo from "../../images/logo.svg";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function Navbar() {
+
+    function getInitialState() {
+        return { activeTabClassName: "active"}
+    }
+
+
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
             <Link className="navbar-brand font-weight-bold m-brand" id="brand-text" to="">
@@ -17,15 +24,15 @@ function Navbar() {
             </button>
 
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav ml-auto ml-nav font-nav">
+                <ul className="navbar-nav ml-auto ml-nav font-nav nav-vit">
                     <li className="nav-item">
-                        <Link className="nav-link" to="">Home</Link>
-                    </li>
-                    <li className="nav-item active">
-                        <Link className="nav-link" to="Templates">Templates</Link>
+                        <NavLink exact className="nav-link" to="/" activeClassName="active">Home</NavLink>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="#">Log in</Link>
+                        <NavLink className="nav-link" to="/templates" activeClassName="active">Templates</NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/login" activeClassName="active">Log in</NavLink>
                     </li>
                 </ul>
             </div>
