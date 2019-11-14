@@ -1,0 +1,50 @@
+
+.select-cv{
+    height: 9rem;
+    width: 9rem;
+}
+
+.btn-purple{
+  background-color: #9c27b0;
+}
+.btn-blue{
+  background-color: #1976d2;
+}
+.btn-green{
+  background-color: #73da8c;
+}
+.btn-outline-green:focus{
+  background-color: #73da8c;
+  box-shadow: 0 0 0 0 #73da8c;
+}
+.btn-outline-green:hover{
+  box-shadow: 0 0 0 0 #73da8c;
+}
+.btn-outline-green{
+  border: 0.05rem solid #000000;
+}
+.btn-cirlce{
+  height: 4rem;
+  width: 4rem;
+  margin: 0.5rem;
+  border-radius: 100%;
+  border: 0.05rem solid #000000;
+}
+.btn-blue:focus{
+  box-shadow: 0 0 0 0;
+}
+.btn-green:focus{
+  box-shadow: 0 0 0 0;
+}
+.btn-purple:focus{
+  box-shadow: 0 0 0 0;
+}
+.btn-white:focus{
+  box-shadow: 0 0 0 0;
+}
+.btn-success{
+  background-color: #73da8c;
+}
+.btn-success:hover{
+  background-color: #30b551;
+}

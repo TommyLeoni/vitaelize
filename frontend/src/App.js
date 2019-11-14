@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Homepage/Home";
+import Template from "./components/Templates/Template"
 
 export default class App extends React.Component {
   constructor(props) {
