@@ -2,8 +2,8 @@
     font-size: 4.5rem;
 }
 
-.m-title{
-    margin: 4% 0;
+#m-title{
+    margin: 4% 0 9% 0;
 }
 
 .Home-logo{
@@ -23,9 +23,83 @@
 #div-htext{
     height: 20rem;
 }
-
+.btn-vitaelize{
+    background-color: #73da8c;
+}
+#introduction-text{
+    font-size: 1.2rem;
+}
+/*max phone width*/
 @media only screen and (max-device-width: 414px){
-    #hometitle{
-        font-size: 3.8rem;
+    #m-title{
+        visibility: hidden;
+        display: none !important;
+    }
+    .Home-cv{
+        height: 15rem;
+        width: 15rem;
+    }
+    #div-htext{
+        margin-left: 1.5rem !important;
+        margin-right: 1.5rem !important;
+    }
+    #div-hcv{
+        margin-top: 4rem;
+        margin-bottom: 4rem;
     }
 }
+/*for resizing*/
+@media only screen and (max-width: 414px){
+    #m-title{
+        visibility: hidden;
+        display: none !important;
+    }
+    .Home-cv{
+        height: 15rem;
+        width: 15rem;
+    }
+    #div-htext{
+        margin-left: 1.5rem !important;
+        margin-right: 1.5rem !important;
+    }
+    #div-hcv{
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+}
+/*widest collapsed navbar width*/
+@media only screen and (min-device-width: 415px) and (max-device-width: 763px) {
+    #m-title{
+        visibility: hidden;
+        display: none !important;
+    }
+    .Home-cv{
+        height: 15rem;
+        width: 15rem;
+    }
+    #div-htext{
+        margin-left: 1.5rem !important;
+        margin-right: 1.5rem !important;
+    }
+    #div-hcv{
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+}
+/*open navbar*/
+@media only screen and (min-device-width: 988px) {
+
+}
+/*website width when intro text and logo arent on top of each other anymore*/
+@media only screen and (min-device-width: 764px) {
+    #m-title{
+        visibility: hidden;
+        margin: 0 !important;
+
+    }
+    .Home-cv{
+        height: 17rem;
+        width: 17rem;
+    }
+}
+
