@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Homepage/Home";
+import Login from "./components/Login/Login";
 import { Switch, Route } from "react-router-dom";
 import Templates from "./components/Templates/Template";
 
@@ -15,10 +16,10 @@ export default class App extends React.Component {
 
   showCock = () => {
     console.log("heilige Maria !!!");
-  }
+  };
   pTest = () => {
     console.log("works");
-  }
+  };
 
   render() {
     return(
@@ -27,6 +28,7 @@ export default class App extends React.Component {
               <Navbar/>
             </header>
             <body>
+            <div className="container">
                 <Switch>
                     <Route
                         exact
@@ -36,7 +38,9 @@ export default class App extends React.Component {
                         )}
                     />
                     <Route exact path="/templates" component={Templates}/>
+                    <Route exact path="/login" component={Login}/>
                 </Switch>
+            </div>
             </body>
         </div>
     );

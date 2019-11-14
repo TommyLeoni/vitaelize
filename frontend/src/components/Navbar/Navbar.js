@@ -5,9 +5,6 @@ import { NavLink, Link } from "react-router-dom";
 
 function Navbar() {
 
-    function getInitialState() {
-        return { activeTabClassName: "active"}
-    }
 
 
 

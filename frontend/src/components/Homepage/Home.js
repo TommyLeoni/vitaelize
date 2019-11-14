@@ -5,7 +5,7 @@ import cv from "../../images/resume.svg";
 
 function Home() {
     return (
-        <div className="container">
+        <div>
             <div className="d-flex justify-content-center" id="m-title">
                 <img src={logo} className="Home-logo " alt="logo" />
                 <h1 className="font-weight-bold" id="hometitle">vitaelize</h1>
