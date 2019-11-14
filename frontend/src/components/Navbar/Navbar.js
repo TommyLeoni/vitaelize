@@ -1,14 +1,15 @@
 import './Navbar.css';
 import React from 'react';
 import logo from "../../images/logo.svg";
+import { Link } from "react-router-dom";
 
 function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
-            <a className="navbar-brand font-weight-bold m-brand" id="brand-text" href="#">
+            <Link className="navbar-brand font-weight-bold m-brand" id="brand-text" to="">
                 <img src={logo} className="Navbar-logo" alt="logo" />
                 vitaelize
-            </a>
+            </Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -18,10 +19,10 @@ function Navbar() {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav ml-auto ml-nav font-nav">
                     <li className="nav-item active">
-                        <a className="nav-link" href="#">Templates</a>
+                        <Link className="nav-link" to="#">Templates</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Log in</a>
+                        <Link className="nav-link" to="#">Log in</Link>
                     </li>
                 </ul>
             </div>
