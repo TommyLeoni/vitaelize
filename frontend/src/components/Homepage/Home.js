@@ -1,7 +1,7 @@
 import './Home.css';
 import React from 'react';
 import logo from "../../images/logo.svg";
-import cv from "../../images/resume.svg"
+import cv from "../../images/resume.svg";
 
 function Home() {
     return (
