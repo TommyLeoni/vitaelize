@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@material-ui/core": "^4.6.1",
-    "formik": "^2.0.4"
-  }
-}
