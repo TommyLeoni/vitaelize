@@ -49,3 +49,8 @@
 .btn-success:hover{
   background-color: #30b551;
 }
+
+.input-hidden {
+  position: absolute;
+  left: -9999px;
+}
