@@ -2,15 +2,28 @@ import './Home.css';
 import React from 'react';
 import logo from "../../images/logo.svg";
 import cv from "../../images/resume.svg";
+import Modal from "react-modal";
+import Login from "../Login/Login";
 
 function Home() {
+
+    const [modalIsOpen,setIsOpen] = React.useState(false);
+    function openModal() {
+        setIsOpen(true);
+    }
+
+    function afterOpenModal() {
+        // references are now sync'd and can be accessed.
+    }
+
+    function closeModal(){
+        setIsOpen(false);
+    }
+
+
     return (
         <div>
-            <div className="d-flex justify-content-center" id="m-title">
-                <img src={logo} className="Home-logo " alt="logo" />
-                <h1 className="font-weight-bold" id="hometitle">vitaelize</h1>
-            </div>
-            <div className="row">
+            <div className="row home-cont">
 
                 <div className="col-lg-5 col-md-10 col-sm-12 d-flex ml-auto mr-auto justify-content-center" id="div-hcv">
                     <img src={cv} className="Home-cv" alt="cv" />
@@ -22,10 +35,31 @@ function Home() {
                         </p>
                     </div>
                     <div className="d-flex justify-content-center mb-3">
-                        <button className="btn btn-vitaelize">get started</button>
+                        <button className="btn btn-vitaelize" onClick={openModal}>get started</button>
                     </div>
-
                 </div>
+
+                <Modal
+                    isOpen={modalIsOpen}
+                    onAfterOpen={afterOpenModal}
+                    onRequestClose={closeModal}
+                    contentLabel="Login"
+                    className="modalForm"
+                    style={{
+                        overlay: {
+                            position: 'fixed',
+                            top: 0,
+                            left: 0,
+                            right: 0,
+                            bottom: 0,
+                            backgroundColor: 'rgba(255, 255, 255, 0.75)'
+                        }
+                    }}
+                >
+                    <Login/>
+
+                </Modal>
+
             </div>
         </div>
     )

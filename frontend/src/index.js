@@ -4,6 +4,9 @@ import './App.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
+import Modal from "react-modal";
+
+Modal.setAppElement(document.getElementById('root'));
 
 ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));
 

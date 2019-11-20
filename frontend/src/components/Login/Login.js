@@ -4,6 +4,7 @@ class Login extends Component {
     render() {
         return (
             <div>
+                <h4 className="display-4">Login</h4>
                 <form>
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">Email address</label>
@@ -17,7 +18,7 @@ class Login extends Component {
                         <input type="password" className="form-control" id="exampleInputPassword1"
                                placeholder="Password"/>
                     </div>
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-vitaelize">Submit</button>
                 </form>
             </div>
         );
