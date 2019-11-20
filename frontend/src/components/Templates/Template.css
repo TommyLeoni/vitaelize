@@ -31,16 +31,17 @@
   border: 0.05rem solid #000000;
 }
 .btn-blue:focus{
-  box-shadow: 0 0 0 0;
+  box-shadow: 0 0 10px gray
 }
 .btn-green:focus{
-  box-shadow: 0 0 0 0;
+  box-shadow: 0 0 10px gray
 }
 .btn-purple:focus{
-  box-shadow: 0 0 0 0;
+  box-shadow: 0 0 10px gray
 }
 .btn-white:focus{
-  box-shadow: 0 0 0 0;
+  box-shadow: 0 0 10px gray
+
 }
 .btn-success{
   background-color: #73da8c;
