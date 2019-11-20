@@ -41,6 +41,9 @@
         margin-top: 4rem;
         margin-bottom: 4rem;
     }
+    .overlay{
+        padding: 1.2rem;
+    }
 }
 /*for resizing*/
 @media only screen and (max-width: 414px){
@@ -55,6 +58,9 @@
     #div-hcv{
         margin-top: 4rem;
         margin-bottom: 4rem;
+    }
+    .overlay{
+        padding: 1.2rem;
     }
 }
 /*widest collapsed navbar width*/
@@ -77,18 +83,17 @@
     margin-top:13%;
 }
 
-.modalForm{
-    position: absolute;
-    top: 100px;
-    left: 20rem;
-    right: 20rem;
-    bottom: 25rem;
-    border: 1px solid #ccc;
-
-    background: #fff;
-    overflow: auto;
-    WebkitOverflowScrolling: touch;
-    borderRadius: 4px;
-    outline: none;
-    padding: 20px;
+.overlay{
+    padding-top: 10rem;
+}
+.modal{
+    max-width: 700px;
+    position: relative;
+    padding: 1.2rem;
+    background: #ffffff;
+    background-clip: padding-box;
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
+    display: block;
+    height: auto;
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './images/logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -10,9 +9,6 @@ import { Switch, Route } from "react-router-dom";
 import Templates from "./components/Templates/Template";
 
 export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   showCock = () => {
     console.log("heilige Maria !!!");
