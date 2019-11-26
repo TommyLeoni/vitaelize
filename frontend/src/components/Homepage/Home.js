@@ -2,7 +2,8 @@ import './Home.css';
 import React, {Component} from 'react';
 import cv from "../../images/resume.svg";
 import Modal from "react-responsive-modal";
-import Login from "../Login/Login";
+import ModalForm from "../ModalForms/ModalForm";
+import Login from "../ModalForms/Login";
 
 class Home extends Component{
 
@@ -53,8 +54,7 @@ class Home extends Component{
                             overlay: overlay
                         }}
                     >
-                        <Login/>
-
+                        <ModalForm/>
                     </Modal>
 
                 </div>

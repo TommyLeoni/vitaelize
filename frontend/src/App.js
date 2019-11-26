@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Homepage/Home";
-import Login from "./components/Login/Login";
+import Login from "./components/ModalForms/Login";
 import { Switch, Route } from "react-router-dom";
 import Templates from "./components/Templates/Template";
 
