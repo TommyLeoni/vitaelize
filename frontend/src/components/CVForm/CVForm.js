@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import useForm from "react-hook-form";
+import axios from "axios";
 import { TextField } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -33,7 +34,14 @@ const CV = {
 export default function CVForm() {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = values => {
-    console.log(values);
+    axios
+      .post("http://localhost:4000/api/users/login", {
+        email: values.email,
+        password: values.password
+      })
+      .then(function(res) {
+        console.log(res.data);
+      });
   };
 
   const classes = useStyles();
@@ -42,13 +50,22 @@ export default function CVForm() {
       <div className="col-4 my-auto">
         <form onSubmit={handleSubmit(onSubmit)}>
           <TextField
-            name="Name"
+            name="email"
             inputRef={register}
             id="standard-basic"
             className={classes.textField}
-            label="Standard"
+            label="Email"
             margin="normal"
           />
+          <TextField
+            name="password"
+            inputRef={register}
+            id="standard-basic"
+            className={classes.textField}
+            label="Password"
+            margin="normal"
+          />
+          <input type="submit" value="Submit" />
         </form>
       </div>
       <div className="col-4 my-auto text-center">

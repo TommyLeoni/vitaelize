@@ -10,17 +10,6 @@ import Templates from "./components/Templates/Template";
 import CVForm from './components/CVForm/CVForm';
 
 export default class App extends React.Component {
-<<<<<<< HEAD
-  showCock = () => {
-    console.log("heilige Maria !!!");
-  };
-  
-  pTest = () => {
-    console.log("works");
-  };
-=======
->>>>>>> 28897e81c11bc120cae1de62ff35a17ff6e68ee0
-
   render() {
     return(
         <div className="App">
