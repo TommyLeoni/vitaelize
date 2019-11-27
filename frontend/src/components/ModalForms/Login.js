@@ -1,12 +1,15 @@
 import React from 'react';
 import './ModalForms.css';
 
-function Login(){
+function handleSubmit() {
+    
+}
 
+function Login(){
     return (
         <div>
             <h4 className="display-5 ">Login</h4>
-            <form>
+            <form onSubmit={handleSubmit()}>
                 <div className="form-group">
                     <label htmlFor="EmailLog">Email address</label>
                     <input type="email" className="form-control" id="EmailLogin"

@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Homepage/Home";
 import Login from "./components/ModalForms/Login";
 import { Switch, Route } from "react-router-dom";
-import Templates from "./components/Templates/Template";
+import TemplatePicker from "./components/TemplatePicker";
 import CVForm from './components/CVForm/CVForm';
 
 export default class App extends React.Component {
@@ -25,7 +25,7 @@ export default class App extends React.Component {
                             <Home {...props}/>
                         )}
                     />
-                    <Route exact path="/templates" component={Templates}/>
+                    <Route exact path="/templates" component={TemplatePicker}/>
                     <Route exact path="/login" component={Login}/>
                     <Route exact path="/create-cv" component={CVForm}/>
                 </Switch>
