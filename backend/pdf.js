@@ -1,24 +1,12 @@
-var templateBase = 'basic'
-var colour = 'green'
+var pdf = require("html-pdf");
+var mailer = require("./templating/mailer");
 
-var fs = require('fs')
-var pdf = require('html-pdf')
-var Mustache = require('mustache')
-var html = fs.readFileSync(
-  './templates/' + templateBase + '/' + colour + '.html',
-  'utf8'
-)
-var options = { format: 'Letter' }
-
-var template = html
-Mustache.parse(template) // optional, speeds up future uses
-var rendered = Mustache.render(template, {
-  name: 'Luke',
-  colourPalette: '#ff0000'
-})
-html = rendered
-
-pdf.create(html, options).toFile('./businesscard.pdf', function (err, res) {
-  if (err) return console.log(err)
-  console.log(res) // { filename: '/app/businesscard.pdf' }
-})
+module.exports = function(html) {
+  pdf
+    .create(html, { format: "Letter" })
+    .toFile("./example.pdf", function(err, res) {
+      if (err) return console.log(err);
+      mailer.send("tomasoleoni011@gmail.com");
+      console.log(res);
+    });
+};
