@@ -26,7 +26,7 @@ class ModalForm extends Component {
         const loadLogin = (
             <div>
                 <Login/>
-                <a className="noAccountYet" href="#" onClick={() => this.state.inpValue === "0" ? this.setState({inpValue: "1"}) : this.setState({inpValue: "0"})}>No account yet?</a>
+                <a href="#" onClick={() => this.state.inpValue === "0" ? this.setState({inpValue: "1"}) : this.setState({inpValue: "0"})}>No account yet?</a>
             </div>
         )
 
