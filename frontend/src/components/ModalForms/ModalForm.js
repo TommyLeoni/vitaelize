@@ -1,6 +1,7 @@
 import Login from "./Login";
 import React, {Component} from 'react';
 import Registration from "./Registration";
+import './ModalForms.css';
 
 class ModalForm extends Component {
 
@@ -25,7 +26,7 @@ class ModalForm extends Component {
         const loadLogin = (
             <div>
                 <Login/>
-                <a onClick={() => this.state.inpValue === "0" ? this.setState({inpValue: "1"}) : this.setState({inpValue: "0"})}>No account yet?</a>
+                <a className="noAccountYet" href="#" onClick={() => this.state.inpValue === "0" ? this.setState({inpValue: "1"}) : this.setState({inpValue: "0"})}>No account yet?</a>
             </div>
         )
 

@@ -10,13 +10,6 @@ import Templates from "./components/Templates/Template";
 
 export default class App extends React.Component {
 
-  showCock = () => {
-    console.log("heilige Maria !!!");
-  };
-  pTest = () => {
-    console.log("works");
-  };
-
   render() {
     return(
         <div className="App">
