@@ -1,0 +1,15 @@
+.display-5 {
+    font-weight: 300;
+    font-size: 3rem;
+}
+
+a {
+    color: grey !important;
+}
+
+@media only screen and (max-device-width: 360px) {
+    .display-5{
+        font-weight: 300;
+        font-size: 2.5rem;
+    }
+}

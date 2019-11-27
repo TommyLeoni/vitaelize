@@ -7,12 +7,19 @@
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
     "formik": "^2.0.4",
+<<<<<<< HEAD
     "mongoose": "^5.7.12",
+=======
+>>>>>>> 28897e81c11bc120cae1de62ff35a17ff6e68ee0
     "node-sass": "^4.13.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-dropdown": "^1.6.4",
+<<<<<<< HEAD
     "react-hook-form": "^3.28.2",
+=======
+    "react-responsive-modal": "^4.0.1",
+>>>>>>> 28897e81c11bc120cae1de62ff35a17ff6e68ee0
     "react-scripts": "3.1.1"
   },
   "scripts": {

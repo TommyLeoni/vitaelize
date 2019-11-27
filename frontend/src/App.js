@@ -4,12 +4,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Homepage/Home";
-import Login from "./components/Login/Login";
+import Login from "./components/ModalForms/Login";
 import { Switch, Route } from "react-router-dom";
 import Templates from "./components/Templates/Template";
 import CVForm from './components/CVForm/CVForm';
 
 export default class App extends React.Component {
+<<<<<<< HEAD
   showCock = () => {
     console.log("heilige Maria !!!");
   };
@@ -17,6 +18,8 @@ export default class App extends React.Component {
   pTest = () => {
     console.log("works");
   };
+=======
+>>>>>>> 28897e81c11bc120cae1de62ff35a17ff6e68ee0
 
   render() {
     return(
