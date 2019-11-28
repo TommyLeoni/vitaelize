@@ -5,6 +5,7 @@ import useForm from "react-hook-form";
 import { TextField, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { withStyles } from "@material-ui/styles";
+import {withRouter} from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -29,14 +30,22 @@ const CssTextField = withStyles({
   }
 })(TextField);
 
-function Registration() {
-  const { register, handleSubmit, errors } = useForm();
+function Registration(props) {
+  const { register, handleSubmit } = useForm();
   const onSubmit = values => {
     axios.post("http://localhost:4000/api/users/register", {
       name: values.name,
       email: values.email,
       password: values.password
-    }).then(res => console.log(res.data))
+    })
+        .then(
+            res => console.log(res.data),
+            props.history.push("/login")
+    )
+        .catch(errors => {
+          console.log(errors);
+          throw errors;
+        })
   };
 
   const classes = useStyles();
@@ -67,6 +76,7 @@ function Registration() {
         />
         <CssTextField
           name="password"
+          type="password"
           inputRef={register}
           id="standard-basic"
           className={classes.textField}
@@ -77,6 +87,7 @@ function Registration() {
         />
         <CssTextField
           name="password"
+          type="password"
           inputRef={register}
           id="standard-basic"
           className={classes.textField}
@@ -95,4 +106,4 @@ function Registration() {
   );
 }
 
-export default Registration;
+export default withRouter(Registration);

@@ -28,7 +28,7 @@ class ModalForm extends Component {
                 <Login/>
                 <a href="#" onClick={() => this.state.inpValue === "0" ? this.setState({inpValue: "1"}) : this.setState({inpValue: "0"})}>No account yet?</a>
             </div>
-        )
+        );
 
         return (
             <div className="pr-4 pl-4 pb-4">

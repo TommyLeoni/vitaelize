@@ -4,8 +4,9 @@ import "./ModalForms.css";
 import useForm from "react-hook-form";
 import { TextField, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { green } from "@material-ui/core/colors";
 import { withStyles } from "@material-ui/styles";
+import { withRouter } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -30,7 +31,7 @@ const CssTextField = withStyles({
   }
 })(TextField);
 
-function Login() {
+function Login(props) {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = values => {
     axios
@@ -40,7 +41,11 @@ function Login() {
       })
       .then(function(res) {
         window.$authToken = res.data;
-      });
+        props.history.push("/templates");
+      })
+        .catch(err => {
+            throw err;
+        })
   };
 
   const classes = useStyles();
@@ -50,6 +55,7 @@ function Login() {
       <form onSubmit={handleSubmit(onSubmit)}>
           <CssTextField
             name="email"
+            type="email"
             inputRef={register}
             id="standard-basic"
             className={classes.textField}
@@ -60,6 +66,7 @@ function Login() {
           />
           <CssTextField
             name="password"
+            type="password"
             inputRef={register}
             id="standard-basic"
             className={classes.textField}
@@ -78,4 +85,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default withRouter(Login);

@@ -1,12 +1,19 @@
 import './Navbar.css';
 import React from 'react';
 import logo from "../../images/logo.svg";
-import { NavLink, Link } from "react-router-dom";
+import {NavLink, Link, withRouter} from "react-router-dom";
 
 function Navbar() {
 
+    function logout() {
+        window.$authToken = null;
+    }
 
-
+    const Logout = (
+        <li className="nav-item">
+            <a href="/" className="nav-link" onClick={logout.bind(this)}>Logout</a>
+        </li>
+    );
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
@@ -28,9 +35,10 @@ function Navbar() {
                     <li className="nav-item">
                         <NavLink className="nav-link" to="/templates" activeClassName="active">Templates</NavLink>
                     </li>
+                    {window.$authToken ? Logout : null}
                 </ul>
             </div>
         </nav>
 );
 }
-export default Navbar;
+export default withRouter(Navbar);
