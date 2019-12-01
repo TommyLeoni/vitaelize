@@ -1,10 +1,8 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Homepage/Home";
-import Login from "./components/ModalForms/Login";
 import { Switch, Route } from "react-router-dom";
 import TemplatePicker from "./components/TemplatePicker";
 import CVForm from './components/CVForm/CVForm';

@@ -20,6 +20,7 @@ class ModalForm extends Component {
             <div>
                 {() => this.state.inpValue === "1" ? this.setState({inpValue: "0"}) : this.setState({inpValue: "1"})}
                 <Registration/>
+
             </div>
         );
 

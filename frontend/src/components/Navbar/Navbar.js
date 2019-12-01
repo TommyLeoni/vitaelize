@@ -11,7 +11,7 @@ function Navbar() {
 
     const Logout = (
         <li className="nav-item">
-            <a href="/" className="nav-link" onClick={logout.bind(this)}>Logout</a>
+            <a href="/" className="nav-link pl-md-5" onClick={logout.bind(this)}>Logout</a>
         </li>
     );
 
@@ -28,12 +28,12 @@ function Navbar() {
             </button>
 
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav ml-auto ml-nav font-nav nav-vit">
+                <ul className="navbar-nav ml-lg-auto ml-nav font-nav nav-vit">
                     <li className="nav-item">
-                        <NavLink exact className="nav-link" to="/" activeClassName="active">Home</NavLink>
+                        <NavLink exact className="nav-link pl-md-5" to="/" activeClassName="active">Home</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="/templates" activeClassName="active">Templates</NavLink>
+                        <NavLink className="nav-link pl-md-5" to="/templates" activeClassName="active">Templates</NavLink>
                     </li>
                     {window.$authToken ? Logout : null}
                 </ul>

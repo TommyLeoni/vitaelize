@@ -3,10 +3,16 @@ import React, {Component} from 'react';
 import cv from "../../images/resume.svg";
 import Modal from "react-responsive-modal";
 import ModalForm from "../ModalForms/ModalForm";
-import {toast, ToastContainer} from "react-toastify";
+import {withRouter} from "react-router-dom";
 
 class Home extends Component{
-    test = () => toast.error("Wrong credentials.", {containerId: 'succ'});
+
+    constructor(props) {
+        super(props);
+
+    }
+
+
     state = {
         open: false,
         showCloseIcon: false,
@@ -40,7 +46,7 @@ class Home extends Component{
                             </p>
                         </div>
                         <div className="d-flex justify-content-center mb-3">
-                            <button className="btn btn-vitaelize" onClick={this.openModal}>{window.$authToken ? "start editing" : "get started"}</button>
+                            {window.$authToken ? null : <button className="btn btn-vitaelize" onClick={this.openModal}>get started</button>}
                         </div>
                     </div>
 
@@ -58,11 +64,10 @@ class Home extends Component{
                     </Modal>
 
                 </div>
-                {window.$authToken ? null : <ToastContainer enableMultiContainer containerId={'succ'} position={toast.POSITION.BOTTOM_LEFT}/>}
 
             </div>
         )
     }
 
 }
-export default Home;
+export default withRouter(Home);
