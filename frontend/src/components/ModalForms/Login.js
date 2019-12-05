@@ -32,7 +32,7 @@ const CssTextField = withStyles({
 })(TextField);
 
 function Login(props) {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit } = useForm();
   const onSubmit = values => {
     axios
       .post("http://localhost:4000/api/users/login", {
@@ -44,7 +44,9 @@ function Login(props) {
         props.history.push("/templates");
       })
         .catch(err => {
-            throw err;
+            console.log(err);
+            toast.error("Login unsuccessful.", {toastId: "unsucc"});
+
         })
   };
 
@@ -63,6 +65,7 @@ function Login(props) {
             margin="normal"
             variant="outlined"
             fullWidth
+            required
           />
           <CssTextField
             name="password"
@@ -74,6 +77,7 @@ function Login(props) {
             margin="normal"
             variant="outlined"
             fullWidth
+            required
           />
           <div className="h-100 mt-2 mb-2">
             <Button className="bg-success my-auto" type="submit">
