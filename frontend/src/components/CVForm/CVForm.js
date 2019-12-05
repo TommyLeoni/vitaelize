@@ -33,7 +33,8 @@ const CV = {
 
 export default function CVForm(props) {
   const { register, handleSubmit, errors } = useForm();
-  const { accentColour, template } = props.location.state;
+  const { accentColour, templateChoice } = props.location.state;
+  
   const onSubmit = values => {
     axios
       .post("http://localhost:4000/api/users/login", {
