@@ -13,3 +13,17 @@ a {
         font-size: 2.5rem;
     }
 }
+.overlay{
+    padding-top: 10rem;
+}
+.modal{
+    max-width: 700px;
+    position: relative;
+    padding: 1.2rem;
+    background: #ffffff;
+    background-clip: padding-box;
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
+    display: block;
+    height: auto;
+}

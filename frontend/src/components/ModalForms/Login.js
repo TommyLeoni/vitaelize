@@ -4,8 +4,9 @@ import "./ModalForms.css";
 import useForm from "react-hook-form";
 import { TextField, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { green } from "@material-ui/core/colors";
 import { withStyles } from "@material-ui/styles";
+import { withRouter } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -30,8 +31,8 @@ const CssTextField = withStyles({
   }
 })(TextField);
 
-function Login() {
-  const { register, handleSubmit, errors } = useForm();
+function Login(props) {
+  const { register, handleSubmit } = useForm();
   const onSubmit = values => {
     axios
       .post("http://localhost:4000/api/users/login", {
@@ -40,7 +41,13 @@ function Login() {
       })
       .then(function(res) {
         window.$authToken = res.data;
-      });
+        props.history.push("/templates");
+      })
+        .catch(err => {
+            console.log(err);
+            toast.error("Login unsuccessful.", {toastId: "unsucc"});
+
+        })
   };
 
   const classes = useStyles();
@@ -50,6 +57,7 @@ function Login() {
       <form onSubmit={handleSubmit(onSubmit)}>
           <CssTextField
             name="email"
+            type="email"
             inputRef={register}
             id="standard-basic"
             className={classes.textField}
@@ -57,9 +65,11 @@ function Login() {
             margin="normal"
             variant="outlined"
             fullWidth
+            required
           />
           <CssTextField
             name="password"
+            type="password"
             inputRef={register}
             id="standard-basic"
             className={classes.textField}
@@ -67,6 +77,7 @@ function Login() {
             margin="normal"
             variant="outlined"
             fullWidth
+            required
           />
           <div className="h-100 mt-2 mb-2">
             <Button className="bg-success my-auto" type="submit">
@@ -78,4 +89,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default withRouter(Login);
