@@ -31,7 +31,7 @@ const CssTextField = withStyles({
   }
 })(TextField);
 
-function Registration() {
+const Registration = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = values => {
     axios.post("http://localhost:4000/api/users/register", {
