@@ -8,18 +8,12 @@ router.post("/register", async (req, res) => {
   //Validate data before instantiating new user model
   const { error } = registerValidation(req.body);
   if (error) return res.status(400).send(error.details[0].message);
-<<<<<<< HEAD
-=======
   console.log("data validated");
->>>>>>> 3e09a83eafb0cb518df00338c0ecadf32b294225
 
   //Check if user already in database
   const emailExist = await User.findOne({ email: req.body.email });
   if (emailExist) return res.status(400).send("Email already taken!");
-<<<<<<< HEAD
-=======
   console.log("user checked");
->>>>>>> 3e09a83eafb0cb518df00338c0ecadf32b294225
 
   //Hash password
   const salt = await bcrypt.genSalt(10);
