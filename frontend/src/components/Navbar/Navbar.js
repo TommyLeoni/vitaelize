@@ -29,11 +29,11 @@ function Navbar() {
 
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav ml-lg-auto ml-nav font-nav nav-vit">
-                    <li className="nav-item">
-                        <NavLink exact className="nav-link pl-md-5" to="/" activeClassName="active">Home</NavLink>
+                    <li className="nav-item ml-sm-5">
+                        <NavLink exact className="nav-link pl-md-5 pl-sm-5 p-lg-2 pr-sm-5" to="/" activeClassName="active">Home</NavLink>
                     </li>
-                    <li className="nav-item">
-                        <NavLink className="nav-link pl-md-5" to="/templates" activeClassName="active">Templates</NavLink>
+                    <li className="nav-item ml-sm-5">
+                        <NavLink className="nav-link pl-md-5 pl-sm-5 p-lg-2" to="/templates" activeClassName="active">Templates</NavLink>
                     </li>
                     {window.$authToken ? Logout : null}
                 </ul>
