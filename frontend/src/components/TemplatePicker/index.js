@@ -3,6 +3,7 @@ import cvIcon from "../../images/resume.svg";
 import "./styles.css";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
 
 const toastID = "test";
 const notify = () => {
@@ -70,34 +71,46 @@ export default function TemplatePicker() {
 
       <div className="col-5">
         <div
-          className="colour-opt shadow d-inline-block m-2 bg-info"
+          className={`colour-opt shadow d-inline-block m-2 bg-info justify-content-center ${
+            accent === "blue" ? "colour-selected" : ""
+          }`}
           onClick={() => setAccent("blue")}
         />
         <div
-          className="colour-opt shadow d-inline-block m-2 bg-danger"
+          className={`colour-opt shadow d-inline-block m-2 bg-danger ${
+            accent === "red" ? "colour-selected" : ""
+          }`}
           onClick={() => setAccent("red")}
         />
         <div
-          className="colour-opt shadow d-inline-block m-2 bg-success"
+          className={`colour-opt shadow d-inline-block m-2 bg-success ${
+            accent === "green" ? "colour-selected" : ""
+          }`}
           onClick={() => setAccent("green")}
         />
         <div
-          className="colour-opt shadow d-inline-block m-2 bg-warning"
+          className={`colour-opt shadow d-inline-block m-2 bg-warning ${
+            accent === "yellow" ? "colour-selected" : ""
+          }`}
           onClick={() => setAccent("yellow")}
         />
         <div
-          className="colour-opt shadow d-inline-block m-2 bg-secondary"
+          className={`colour-opt shadow d-inline-block m-2 bg-secondary ${
+            accent === "grey" ? "colour-selected" : ""
+          }`}
           onClick={() => setAccent("grey")}
         />
         <div
-          className="colour-opt shadow d-inline-block m-2 bg-light"
+          className={`colour-opt shadow d-inline-block m-2 bg-light ${
+            accent === "white" ? "colour-selected" : ""
+          }`}
           onClick={() => setAccent("white")}
         />
       </div>
 
       <div className="col-12 text-center">
         <Link
-        className="btn btn-success text-light"
+          className="btn btn-success text-light"
           to={{
             pathname: "/create-cv",
             state: { accentColour: accent, templateChoice: template }

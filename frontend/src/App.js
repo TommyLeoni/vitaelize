@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Homepage/Home";
 import { Switch, Route } from "react-router-dom";
 import TemplatePicker from "./components/TemplatePicker";
-import CVForm from './components/CVForm/CVForm';
+import CVForm from './components/CVForm/CVGrid';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
