@@ -3,10 +3,11 @@ const verify = require("./verifyToken");
 const generator = require("../templating/generator");
 const pdfController = require("../pdf");
 
-router.get("/generate", verify, async (req, res) => {
+router.post("/generate", verify, async (req, res) => {
   try {
-    const pdfSettings = req.body.pdfSettings;
-    pdfController(generator.first(pdfSettings));
+    //const pdfSettings = req.body.pdfSettings;
+    //pdfController(generator.first(pdfSettings));
+    res.send({msg: req.files.portrait.name})
     res.send({msg: "Your PDF was successfully created and sent to your email!"})
   } catch (error) {
       console.log(error);

@@ -1,21 +1,16 @@
-import React, { useState } from "react";
-import useForm from "react-hook-form";
-//import axios from "axios";
-import { TextField } from "@material-ui/core";
-//import { makeStyles } from "@material-ui/core/styles";
-import { withStyles } from "@material-ui/styles";
 import MuiPhoneNumber from "material-ui-phone-number";
-import AddCircleIcon from "@material-ui/icons/AddCircle";
+import "react-phone-number-input/style.css";
+import PhoneInput from "react-phone-number-input";
+import { withStyles } from "@material-ui/styles";
+import { TextField } from "@material-ui/core";
+import PortraitDropzone from "./PortraitDnd";
+import EducationCareer from "./EduCareer";
+import useForm from "react-hook-form";
+import CV from "./model/cvModel";
+import Hobbys from "./Hobbys";
+import React from "react";
+import "./styles.css";
 import "date-fns";
-import DateFnsUtils from "@date-io/date-fns";
-import {
-  MuiPickersUtilsProvider,
-  KeyboardTimePicker,
-  KeyboardDatePicker
-} from "@material-ui/pickers";
-import EduModel from "./model/eduModel";
-import "jquery";
-import "bootstrap/js/dist/collapse";
 
 const CssTextField = withStyles({
   root: {
@@ -33,95 +28,15 @@ const CssTextField = withStyles({
   }
 })(TextField);
 
-const EduField = props => (
-  <div className={`row ${props.separator ? "border-top" : ""}`}>
-    <div className="col-3">
-      <KeyboardDatePicker
-        disableToolbar
-        inputRef={props.register}
-        variant="outline"
-        format="yyyy"
-        margin="normal"
-        onChange={event => (props.model.dateFrom = event.target.value)}
-        id="date-picker-inline"
-        label="From"
-        KeyboardButtonProps={{
-          "aria-label": "change date"
-        }}
-        fullWidth
-      />
-    </div>
-    <div className="col-3">
-      <KeyboardDatePicker
-        disableToolbar
-        variant="outline"
-        inputRef={props.register}
-        format="yyyy"
-        margin="normal"
-        onChange={event => (props.model.dateUntil = event.target.value)}
-        id="date-picker-inline"
-        label="Until"
-        KeyboardButtonProps={{
-          "aria-label": "change date"
-        }}
-        fullWidth
-      />
-    </div>
-    <div className="col-6">
-      <CssTextField
-        inputRef={props.register}
-        id="standard-full-width"
-        label="Title"
-        margin="normal"
-        onChange={event => (props.model.title = event.target.value)}
-        variant="outlined"
-        fullWidth
-      />
-    </div>
-    <div className="col-12 mb-2">
-      <CssTextField
-        inputRef={props.register}
-        id="standard-full-width"
-        label="Description"
-        margin="normal"
-        onChange={event => (props.model.description = event.target.value)}
-        variant="outlined"
-        fullWidth
-      />
-    </div>
-  </div>
-);
-
-const Education = props => (
-  <div>
-    <MuiPickersUtilsProvider utils={DateFnsUtils}>
-      <EduField model={props.model} separator={false} />
-      {props.children}
-    </MuiPickersUtilsProvider>
-  </div>
-);
-
 export default function Form(props) {
-  const { register, handleSubmit, errors } = useForm();
-  const [numEduFields, setNumEduFields] = useState(0);
-  const eduFieldsArray = [];
-
-  const onSubmit = values => {
-    props.setState({
-      yourName: values.fullName
-    });
-  };
-
-  const onAddChild = () => {
-    setNumEduFields(numEduFields + 1);
-  };
-
-  for (var i = 0; i < numEduFields; i += 1) {
-    eduFieldsArray.push(<EduField model={EduModel} separator={true} />);
-  }
+  const { register, handleSubmit } = useForm();
+  const setState = props.setState;
+  const curriculum = CV;
+  const onSubmit = values => {};
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} id="content-container">
+      <PortraitDropzone />
       <div className="row w-100">
         <div className="col-12">
           <CssTextField
@@ -130,9 +45,12 @@ export default function Form(props) {
             id="standard-full-width"
             label="Your full name"
             margin="normal"
-            onChange={event => props.setState({ name: event.target.value })}
             variant="outlined"
             fullWidth
+            onChange={event => {
+              curriculum.fullName = event.target.value;
+              setState({ cv: curriculum });
+            }}
           />
         </div>
         <div className="col-6">
@@ -144,19 +62,25 @@ export default function Form(props) {
             margin="normal"
             variant="outlined"
             fullWidth
+            onChange={event => {
+              curriculum.address = event.target.value;
+              setState({ cv: curriculum });
+            }}
           />
         </div>
         <div className="col-6">
-          <MuiPhoneNumber
-            name="phoneNumber"
+          <CssTextField
+            name="phone"
             inputRef={register}
             id="standard-basic"
-            label="Your phone number"
+            label="Phone number"
             margin="normal"
-            defaultCountry={"ch"}
-            onChange={props.handleChange}
-            regions={"europe"}
+            variant="outlined"
             fullWidth
+            onChange={event => {
+              curriculum.phone = event.target.value;
+              setState({ cv: curriculum });
+            }}
           />
         </div>
         <div className="col-12">
@@ -168,19 +92,27 @@ export default function Form(props) {
             margin="normal"
             variant="outlined"
             fullWidth
+            onChange={event => {
+              curriculum.email = event.target.value;
+              setState({ cv: curriculum });
+            }}
           />
         </div>
-        <div className="col-12 mt-3">
-          <h4 className="font-weight-bold">Education</h4>
-          <AddCircleIcon
-            style={{ color: "green" }}
-            onClick={onAddChild.bind(this)}
+        <div className="col-12 m-0 p-0">
+          <EducationCareer
+            register={register.bind(this)}
+            setState={setState.bind(this)}
+            curriculum={curriculum}
           />
-          <Education register={register.bind(this)} model={EduModel}>
-            {eduFieldsArray}
-          </Education>
         </div>
-        <div className="col-12 justify-content-center text-right">
+        <div className="col-12 m-0 p-0">
+          <Hobbys
+            register={register.bind(this)}
+            setState={setState.bind(this)}
+            curriculum={curriculum}
+          />
+        </div>
+        <div className="col-12 justify-content-center text-right mt-3">
           <input type="submit" value="Submit" className="btn btn-success" />
         </div>
       </div>

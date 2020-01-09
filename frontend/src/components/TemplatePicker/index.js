@@ -1,9 +1,8 @@
-import React, { useState } from "react";
 import cvIcon from "../../images/resume.svg";
-import "./styles.css";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
+import "./styles.css";
 
 const toastID = "test";
 const notify = () => {

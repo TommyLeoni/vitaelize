@@ -4,6 +4,7 @@ const cors = require("cors");
 const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const fileUpload = require("express-fileupload");
 
 // Routes
 const authRoutes = require("./routes/auth");
@@ -21,6 +22,7 @@ mongoose.connect(
 
 // Routing and Parser settings
 app.use(cors());
+app.use(fileUpload());
 app.use(express.json());
 app.use("/api/pdf", pdfRoutes);
 app.use("/api/users", authRoutes);

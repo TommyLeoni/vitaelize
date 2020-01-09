@@ -14,3 +14,8 @@ label.Mui-focused {
 fieldset .MuiOutlinedInput-root.Mui-focused.MuiOutlinedInput-notchedOutline {
     border-color: green!important;
 }
+
+#content-container {
+    overflow-y: scroll;
+    max-height: 75vh;
+}

@@ -1,0 +1,7 @@
+.dropzone-border {
+  border-style: dashed !important;
+}
+
+.dropzone-border:hover {
+  cursor: pointer;
+}
