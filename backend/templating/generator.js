@@ -1,7 +1,7 @@
 module.exports = {
-  first: function(req, pic) {
-    const content = req.content;
-    const settings = req.settings;
+  first: function(content, pic) {
+    const settings = content.settings;
+    console.log(content)
     return `
     <html>
   <head>
@@ -10,9 +10,10 @@ module.exports = {
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous">
+      <link rel="stylesheet" href="styles.css" >
     <style>
         .test {
-          padding: 0 10cm 0 0!important;
+          padding: 0 4cm 0 0!important;
         }
 
         .lol {
@@ -27,18 +28,23 @@ module.exports = {
           </div>
         </div>
 
+        
         <div class="container test">
-          <div class="jumbotron">
-            <h1>${content.title}</h1>
-            <h3>${content.name}</h3>
-            <p class="lol">${content.jobTitle}</p>
-            <p>${content.phoneNumber}, ${content.address}</p>
-            <p>
-              <a class="btn btn-lg btn-primary"
-                href="http://getbootstrap.com/components/#navbar" role="button">View
-                navbar docs &raquo;</a>
-            </p>
-          </div>
+        <div class="row w-100 my-auto">
+        <div class="col-12 text-center justify-content-center">
+          <h1>${content.title}</h1>
+          <h3>${content.fullName}</h3>
+          <p class="lol">${content.jobTitle}</p>
+          <p>${content.phone}, ${content.address}</p>
+          <p>
+          <a class="btn btn-lg btn-primary"
+          href="http://getbootstrap.com/components/#navbar" role="button">View
+          navbar docs &raquo;</a>
+          </p>
+        </div>
+        <div class="col-6">
+        </div>
+        </div>
         </div>
       </body>
     </html>`;
