@@ -1,15 +1,16 @@
 import MuiPhoneNumber from "material-ui-phone-number";
-import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { withStyles } from "@material-ui/styles";
 import { TextField } from "@material-ui/core";
 import PortraitDropzone from "./PortraitDnd";
+import "react-phone-number-input/style.css";
+import LoadingModal from "./LoadingModal";
 import EducationCareer from "./EduCareer";
 import useForm from "react-hook-form";
 import CV from "./model/cvModel";
 import Hobbys from "./Hobbys";
 import axios from "axios";
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
 import "date-fns";
 
@@ -30,6 +31,8 @@ const CssTextField = withStyles({
 })(TextField);
 
 export default function Form(props) {
+  const [modalShow, setModalShow] = useState(false);
+  const [isLoading, setLoading] = useState(true);
   const { register, handleSubmit } = useForm();
   const setState = props.setState;
   const curriculum = CV;
@@ -47,6 +50,7 @@ export default function Form(props) {
     }).then(function(res, err) {
       if (err) throw err;
       console.log(res);
+      setLoading(false);
     });
   };
 
@@ -144,8 +148,18 @@ export default function Form(props) {
           />
         </div>
         <div className="col-12 justify-content-center text-right mt-3">
-          <input type="submit" value="Submit" className="btn btn-success" />
+          <input
+            type="submit"
+            value="Submit"
+            className="btn btn-success"
+            onClick={() => setModalShow(true)}
+          />
         </div>
+        <LoadingModal
+          show={modalShow}
+          isLoading={isLoading}
+          onHide={() => setModalShow(false)}
+        />
       </div>
     </form>
   );

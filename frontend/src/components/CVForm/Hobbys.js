@@ -27,6 +27,9 @@ const CssTextField = withStyles({
   }
 })(TextField);
 
+let curriculum;
+let setState;
+
 const HobbyField = props => (
   <div className={`row ${props.separator ? "border-top" : ""}`}>
     <div className="col-12 mb-2">
@@ -35,7 +38,10 @@ const HobbyField = props => (
         id="standard-full-width"
         label="Description"
         margin="normal"
-        onChange={event => (props.model.description = event.target.value)}
+        onChange={event => {
+          curriculum.hobbys[props.pos].description = event.target.value;
+          setState({ cv: curriculum });
+        }}
         variant="outlined"
         fullWidth
       />
@@ -47,7 +53,7 @@ const HobbysComponent = props => (
   <div>
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
       <div>
-        <HobbyField separator={false} />
+        <HobbyField separator={false} pos={0} />
         {props.children}
       </div>
     </MuiPickersUtilsProvider>
@@ -58,13 +64,17 @@ export default function Hobbys(props) {
   const [showHobbys, setShowHobbys] = useState(0);
   const [numberHobbys, setNumberHobbys] = useState(0);
   const hobbyFields = [];
+  
+  curriculum = props.curriculum;
+  setState = props.setState;
 
   const onAddHobby = () => {
     setNumberHobbys(numberHobbys + 1);
+    curriculum.hobbys.push({description: ""});
   };
 
-  for (var i = 0; i < numberHobbys; i += 1) {
-    hobbyFields.push(<HobbyField separator={true} />);
+  for (var i = 1; i <= numberHobbys; i += 1) {
+    hobbyFields.push(<HobbyField separator={true} pos={i} key={i}/>);
   }
 
   return (
@@ -85,7 +95,7 @@ export default function Hobbys(props) {
           </div>
         </div>
         <Accordion.Collapse eventKey="0">
-          <HobbysComponent>
+          <HobbysComponent register={props.register.bind(this)}>
             {hobbyFields}
             <AddCircleIcon
               style={{ color: "green" }}
