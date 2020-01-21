@@ -1,7 +1,7 @@
 module.exports = {
   first: function(content, pic) {
     const settings = content.settings;
-    console.log(content)
+    console.log(content);
     return `
     <html>
   <head>
@@ -13,11 +13,31 @@ module.exports = {
       <link rel="stylesheet" href="styles.css" >
     <style>
         .test {
-          padding: 0 4cm 0 0!important;
+          padding: 0 9cm 0 0!important;
         }
 
-        .lol {
-          color: ${settings.color}
+        .blue {
+          color: #42A3B8
+        }
+
+        .red {
+          color: #DC4245
+        }
+
+        .green {
+          color: #4FA746
+        }
+
+        .yellow {
+          color: #F9C132
+        }
+
+        .grey {
+          color: #6C757D
+        }
+
+        .white {
+          color: white
         }
       </style>
     <body>
@@ -32,10 +52,29 @@ module.exports = {
         <div class="container test">
         <div class="row w-100 my-auto">
         <div class="col-12 text-center justify-content-center">
-          <h1>${content.title}</h1>
+          <h1>${content.jobTitle}</h1>
           <h3>${content.fullName}</h3>
           <p class="lol">${content.jobTitle}</p>
           <p>${content.phone}, ${content.address}</p>
+          <p>${content.eduCareer[0].title}, ${content.eduCareer[0].description}</p>
+          ${
+           content.eduCareer[0] ? "<p>" + content.eduCareer[0].title + "</p>" : "" 
+          }
+          ${
+           content.eduCareer[1] ? "<p>" + content.eduCareer[1].title + "</p>" : "" 
+          }
+          ${
+           content.eduCareer[2] ? "<p>" + content.eduCareer[2].title + "</p>" : "" 
+          }
+          ${
+           content.eduCareer[3] ? "<p>" + content.eduCareer[3].title + "</p>" : "" 
+          }
+          ${
+           content.eduCareer[4] ? "<p>" + content.eduCareer[4].title + "</p>" : "" 
+          }
+          ${
+           content.eduCareer[5] ? "<p>" + content.eduCareer[5].title + "</p>" : "" 
+          }
           <p>
           <a class="btn btn-lg btn-primary"
           href="http://getbootstrap.com/components/#navbar" role="button">View

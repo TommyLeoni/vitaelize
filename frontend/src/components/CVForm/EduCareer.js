@@ -60,7 +60,10 @@ const EduField = props => (
         inputRef={props.register}
         format="yyyy"
         margin="normal"
-        onChange={event => (props.model.dateUntil = event.target.value)}
+        onChange={value => {
+          curriculum.eduCareer[props.pos].until = value;
+          setState({ cv: curriculum });
+        }}
         id="date-picker-inline"
         label="Until"
         KeyboardButtonProps={{
@@ -78,7 +81,10 @@ const EduField = props => (
         margin="normal"
         variant="outlined"
         fullWidth
-        onChange={event => (props.model.title = event.target.value)}
+        onChange={event => {
+          curriculum.eduCareer[props.pos].title = event.target.value;
+          setState({ cv: curriculum });
+        }}
       />
     </div>
     <div className="col-12">
@@ -88,7 +94,10 @@ const EduField = props => (
         id="standard-full-width"
         label="Description"
         margin="normal"
-        onChange={event => (props.model.description = event.target.value)}
+        onChange={event => {
+          curriculum.eduCareer[props.pos].description = event.target.value;
+          setState({ cv: curriculum });
+        }}
         variant="outlined"
         fullWidth
       />

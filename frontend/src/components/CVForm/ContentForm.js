@@ -8,6 +8,7 @@ import EducationCareer from "./EduCareer";
 import useForm from "react-hook-form";
 import CV from "./model/cvModel";
 import Hobbys from "./Hobbys";
+import axios from "axios";
 import React from "react";
 import "./styles.css";
 import "date-fns";
@@ -32,12 +33,42 @@ export default function Form(props) {
   const { register, handleSubmit } = useForm();
   const setState = props.setState;
   const curriculum = CV;
-  const onSubmit = values => {};
+  const onSubmit = values => {
+    console.log(curriculum);
+    axios({
+      url: "http://localhost:4000/api/pdf/generate",
+      method: "POST",
+      data: curriculum,
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token":
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTE2ZDY1ZDI3MGU3NjNjMjdiMjBiYzEiLCJpYXQiOjE1Nzg1NTQ5NzN9.P8UCcJwflK_fKinqXE30KREyuzVtXuTJgavaGVqOzYk"
+      }
+    }).then(function(res, err) {
+      if (err) throw err;
+      console.log(res);
+    });
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} id="content-container">
       <PortraitDropzone />
       <div className="row w-100">
+        <div className="col-12">
+          <CssTextField
+            name="jobTitle"
+            inputRef={register}
+            id="standard-full-width"
+            label="Your job title"
+            margin="normal"
+            variant="outlined"
+            fullWidth
+            onChange={event => {
+              curriculum.jobTitle = event.target.value;
+              setState({ cv: curriculum });
+            }}
+          />
+        </div>
         <div className="col-12">
           <CssTextField
             name="fullName"

@@ -1,5 +1,6 @@
 const CV = {
   portrait: 0,
+  jobTitle: "",
   fullName: "",
   address: "",
   phone: "",
@@ -12,7 +13,8 @@ const CV = {
       description: ""
     }
   ],
-  hobbys: [{ description: "" }]
+  hobbys: [{ description: "" }],
+  settings: {}
 };
 
 export default CV;

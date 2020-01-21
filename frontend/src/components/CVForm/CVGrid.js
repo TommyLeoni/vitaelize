@@ -6,8 +6,10 @@ import CV from "./model/cvModel";
 export default class CVForm extends React.Component {
   constructor(props) {
     super(props);
+    const curriculum = CV;
+    curriculum.settings = props.location.state;
     this.state = {
-      cv: CV
+      cv: curriculum
     };
   }
 
