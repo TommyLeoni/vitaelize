@@ -88,6 +88,21 @@ export default function Form(props) {
             }}
           />
         </div>
+        <div className="col-12">
+          <CssTextField
+            name="birthday"
+            inputRef={register}
+            id="standard-full-width"
+            label="Your date of birth"
+            margin="normal"
+            variant="outlined"
+            fullWidth
+            onChange={event => {
+              curriculum.birthday = event.target.value;
+              setState({ cv: curriculum });
+            }}
+          />
+        </div>
         <div className="col-6">
           <CssTextField
             name="Address"

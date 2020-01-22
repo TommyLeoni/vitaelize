@@ -5,7 +5,7 @@ import Modal from "react-responsive-modal";
 import ModalForm from "../ModalForms/ModalForm";
 import { withRouter } from "react-router-dom";
 
-class Home extends Component {
+class Home extends React.Component {
   state = {
     open: false,
     showCloseIcon: false,

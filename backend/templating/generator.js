@@ -4,89 +4,115 @@ module.exports = {
     console.log(content);
     return `
     <html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous">
-      <link rel="stylesheet" href="styles.css" >
-    <style>
-        .test {
-          padding: 0 9cm 0 0!important;
-        }
 
-        .blue {
-          color: #42A3B8
-        }
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    .test {
+      padding: 0 4cm 0 0!important;
+      height: 100vh;
+    }
 
-        .red {
-          color: #DC4245
-        }
+    .title-color-blue {
+      color: #42A3B8 !important;
+    }
 
-        .green {
-          color: #4FA746
-        }
+    .title-color-red {
+      color: #DC4245 !important;
+    }
 
-        .yellow {
-          color: #F9C132
-        }
+    .title-color-green {
+      color: #4FA746 !important;
+    }
 
-        .grey {
-          color: #6C757D
-        }
+    .title-color-yellow {
+      color: #F9C132 !important;
+    }
 
-        .white {
-          color: white
-        }
-      </style>
-    <body>
-      <div id="pageHeader">
-        <div class="container">
-          <br/>
-            <span class="label label-default">With external css</span>
+    .title-color-grey {
+      color: #6C757D !important;
+    }
+
+    .blue {
+      border-color: #42A3B8 !important;
+    }
+
+    .red {
+      border-color: #DC4245 !important;
+    }
+
+    .green {
+      border-color: #4FA746 !important;
+    }
+
+    .yellow {
+      border-color: #F9C132 !important;
+    }
+
+    .grey {
+      border-color: #6C757D !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="test">
+    <div class="row p-5">
+    <div class="col-6">
+    lal
+    </div>
+      <div class="col-6 text-center justify-content-center border-right">
+        <div class="text-left font-weight-light">
+          <h2 class="font-weight-bold">${content.fullName}</h2>
+          <p>${content.jobTitle}</p>
+          <h6 class="font-weight-bold">Geburtsdatum:<span class="font-weight-light"> ${
+            content.birthday
+          }</span></h6>
+          <h6 class="font-weight-bold">Addresse:<span class="font-weight-light"> ${
+            content.address
+          }</span></h6>
+          <h6 class="font-weight-bold">Telefon:<span class="font-weight-light"> ${
+            content.phone
+          }</span></h6>
+          <h6 class="font-weight-bold">E-Mail:<span class="font-weight-light"> ${
+            content.email
+          }</span></h6>
+          <div class="border-bottom w-100 my-4"></div>
+          <h3 class="font-weight-bold">Ausbildung & Karriere</h3>
+        </div>
+      </div>
+      <div class="col-6 text-right pl-5">
+        <h3 class="font-weight-bold mt-1">Über mich</h3>
+        <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <h3 class="font-weight-bold mt-1">Hobbys</h3>
+        <div class="row w-100 m-0 p-0 justify-content-end">
+          <div class="col-9 p-0 my-3">
+            <h5>Erstmal Hart gewichst</h5>
+            <p>Aufm Pausenplatz haha dings</p>
           </div>
-        </div>
+          <div class="col-9 p-0 my-3">
+            <h5>Erstmal Hart gewichst</h5>
+            <p>Aufm Pausenplatz haha dings</h6>
+          </div>
+          <div class="col-9 p-0 my-3">
+            <h5>Erstmal Hart gewichst</h5>
+            <p>Aufm Pausenplatz haha dings</p>
+          </div>
+        </div> 
+        <h3 class="font-weight-bold mt-1">Referenzen</h3>
+        <div class="row w-100 m-0 p-0 justify-content-end">
+          <div class="col-9 p-0 my-3">
+            <h5>Erstmal Hart gewichst</h5>
+            <p>Aufm Pausenplatz haha dings</p>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+</body>
 
-        
-        <div class="container test">
-        <div class="row w-100 my-auto">
-        <div class="col-12 text-center justify-content-center">
-          <h1>${content.jobTitle}</h1>
-          <h3>${content.fullName}</h3>
-          <p class="lol">${content.jobTitle}</p>
-          <p>${content.phone}, ${content.address}</p>
-          <p>${content.eduCareer[0].title}, ${content.eduCareer[0].description}</p>
-          ${
-           content.eduCareer[0] ? "<p>" + content.eduCareer[0].title + "</p>" : "" 
-          }
-          ${
-           content.eduCareer[1] ? "<p>" + content.eduCareer[1].title + "</p>" : "" 
-          }
-          ${
-           content.eduCareer[2] ? "<p>" + content.eduCareer[2].title + "</p>" : "" 
-          }
-          ${
-           content.eduCareer[3] ? "<p>" + content.eduCareer[3].title + "</p>" : "" 
-          }
-          ${
-           content.eduCareer[4] ? "<p>" + content.eduCareer[4].title + "</p>" : "" 
-          }
-          ${
-           content.eduCareer[5] ? "<p>" + content.eduCareer[5].title + "</p>" : "" 
-          }
-          <p>
-          <a class="btn btn-lg btn-primary"
-          href="http://getbootstrap.com/components/#navbar" role="button">View
-          navbar docs &raquo;</a>
-          </p>
-        </div>
-        <div class="col-6">
-        </div>
-        </div>
-        </div>
-      </body>
-    </html>`;
+</html>`;
   },
   second: function(req, pic) {
     return `

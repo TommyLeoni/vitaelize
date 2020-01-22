@@ -2,6 +2,7 @@ const CV = {
   portrait: 0,
   jobTitle: "",
   fullName: "",
+  birthday: "",
   address: "",
   phone: "",
   email: "",
