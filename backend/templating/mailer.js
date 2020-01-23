@@ -11,14 +11,14 @@ let transport = nodemailer.createTransport({
 module.exports = {
   send: function(receiver) {
     const message = {
-      from: "elonmusk@tesla.com", // Sender address
+      from: "vitaelize.noreply@gmail.com", // Sender address
       to: receiver, // List of recipients
-      subject: "Design Your Model S | Tesla", // Subject line
-      text: "Have the most fun you can in a car. Get your Tesla today!",
+      subject: "Your CV has arrived!", // Subject line
+      text: "Attached you will find your newly created Curriculum Vitae - enjoy!",
       attachments: [
         {
           filename: "your-cv.pdf",
-          path: "./example.pdf"
+          path: "./templating/cv.pdf"
         }
       ] // Plain text body
     };

@@ -2,12 +2,14 @@ const router = require("express").Router();
 const verify = require("./verifyToken");
 const generator = require("../templating/generator");
 const pdfController = require("../pdf");
+const mailer = require("../templating/mailer");
 const fs = require("fs");
 
 router.post("/generate", verify, async (req, res) => {
   try {
     const cv = req.body;
     pdfController(generator.first(cv));
+    mailer.send(cv.email);
     res.sendStatus(200);
   } catch (error) {
     console.log(error);

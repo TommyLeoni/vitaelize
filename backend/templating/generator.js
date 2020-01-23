@@ -10,8 +10,18 @@ module.exports = {
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <style>
+    #first-col {
+      max-width: 50%;
+      display: inline-block;
+    }
+
+    #second-col {
+      max-width: 50%;
+      display: inline-block;
+    }
+
     .test {
-      padding: 0 4cm 0 0!important;
+      padding: 0 10cm 0 0!important;
       height: 100vh;
     }
 
@@ -59,10 +69,7 @@ module.exports = {
 <body>
   <div class="test">
     <div class="row p-5">
-    <div class="col-6">
-    lal
-    </div>
-      <div class="col-6 text-center justify-content-center border-right">
+      <div class="col-6 text-center justify-content-center border-right" id="first-col">
         <div class="text-left font-weight-light">
           <h2 class="font-weight-bold">${content.fullName}</h2>
           <p>${content.jobTitle}</p>
@@ -82,29 +89,25 @@ module.exports = {
           <h3 class="font-weight-bold">Ausbildung & Karriere</h3>
         </div>
       </div>
-      <div class="col-6 text-right pl-5">
+      <div class="col-6 text-right pl-5" id="second-col">
         <h3 class="font-weight-bold mt-1">Über mich</h3>
         <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         <h3 class="font-weight-bold mt-1">Hobbys</h3>
         <div class="row w-100 m-0 p-0 justify-content-end">
           <div class="col-9 p-0 my-3">
-            <h5>Erstmal Hart gewichst</h5>
-            <p>Aufm Pausenplatz haha dings</p>
+            <h5>Hobby 0</h5>
           </div>
           <div class="col-9 p-0 my-3">
-            <h5>Erstmal Hart gewichst</h5>
-            <p>Aufm Pausenplatz haha dings</h6>
+            <h5>Hobby 1</h5>
           </div>
           <div class="col-9 p-0 my-3">
-            <h5>Erstmal Hart gewichst</h5>
-            <p>Aufm Pausenplatz haha dings</p>
+            <h5>Hobby 2</h5>
           </div>
         </div> 
         <h3 class="font-weight-bold mt-1">Referenzen</h3>
         <div class="row w-100 m-0 p-0 justify-content-end">
           <div class="col-9 p-0 my-3">
-            <h5>Erstmal Hart gewichst</h5>
-            <p>Aufm Pausenplatz haha dings</p>
+            <h5>Hobby 3</h5>
           </div>
         </div> 
       </div>
